@@ -1,23 +1,18 @@
-'use client';
+// app/portfolio/page.tsx
+// Server component — handles metadata only
 
-import Container from '../components/Container';
-import Cta from '../components/cta/Cta';
-import Footer from '../components/footer/Footer';
+import type { Metadata } from 'next';
+import Portfolio from './Portfolio';
 
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Browse Darry's portfolio of web projects — from pixel-perfect frontends to scalable backend systems built with Next.js, React, and Node.js.",
+  openGraph: {
+    title: "Portfolio — Darry",
+    description: "Browse Darry's portfolio of web projects.",
+  },
+};
 
-
-const page = () => {
-  return (
-    <div className='pt-20 md:pt-24'>
-      <Container>
-        <div>
-           
-            <Cta />
-            <Footer />
-        </div>
-      </Container>
-    </div>
-  )
+export default function Page() {
+  return <Portfolio />;
 }
-
-export default page
